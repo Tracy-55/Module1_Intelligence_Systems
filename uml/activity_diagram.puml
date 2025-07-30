@@ -1,0 +1,12 @@
+@startuml name
+start
+:Load concepts.csv;
+:Load corpus.csv;
+:Compute vectors for each document;
+:Build average concept matrix by category;
+:Read unseen.txt;
+:Compute vector for unseen doc;
+:Compare with category vectors;
+:Choose category with shortest distance;
+stop
+@enduml

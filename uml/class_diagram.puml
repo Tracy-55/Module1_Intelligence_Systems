@@ -1,0 +1,17 @@
+@startuml name
+class Document {
+    - category: str
+    - title: str
+    - abstract: str
+    - vector: list
+    + compute_vector(concepts: list): void
+}
+
+class Corpus {
+    - documents: list
+    + add_document(doc: Document): void
+    + get_categories(): list
+}
+
+Document --> Corpus
+@enduml
