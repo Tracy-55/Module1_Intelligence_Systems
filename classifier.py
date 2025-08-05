@@ -4,7 +4,12 @@ import pandas as pd
 import numpy as np
 
 def load_concepts(filepath):
-    return pd.read_csv(filepath, header=None)[0].str.lower().tolist()
+    import csv
+    with open(filepath, 'r', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        for row in reader:
+            return [concept.strip().lower() for concept in row]
+
 
 def load_corpus(filepath, concepts):
     corpus = Corpus()
