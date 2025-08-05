@@ -3,7 +3,7 @@ from utils import euclidean_distance, average_vectors
 import pandas as pd
 import numpy as np
 
-def load_concepts(filepath):
+def load_concepts(filepath): # I am reading the concepts.csv to return the list of concept words
     import csv
     with open(filepath, 'r', encoding='utf-8') as f:
         reader = csv.reader(f)

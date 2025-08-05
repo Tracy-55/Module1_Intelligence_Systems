@@ -1,6 +1,6 @@
 # Document Classification System
 
-This project implements a document classification system using Python. It analyzes training documents based on predefined concepts and predicts the category of a new (unseen) document by comparing its concept vector to learned averages.
+This project implements a document classification system using Python. It analyzes training documents based on predefined concepts and predicts the category of a new (unseen) document by comparing its concept vector to learned averages. It also relfects my understanding of Python and document classification using concept vectors. The project was built using various programming concepts as part of my coursewirk
 
 # How it Works
 
@@ -14,9 +14,14 @@ This project implements a document classification system using Python. It analyz
 # Programming Concepts Demonstrated
 
 **Procedural Programming**: Functions and control flow (`main.py`, `classifier.py`)
-**Functional Programming**: Abstractions and vector operations (`utils.py`)
-**Object-Oriented Programming**: Document and Corpus classes (`models.py`)
-**Mathematical Programming**: Vector math, mean, and Euclidean distance
+
+- I used the main.py to maintain that a step by step procedure is followed
+  **Functional Programming**: Abstractions and vector operations (`utils.py`)
+- Functions such as average_vectors() & euclidean_distance() to show abstraction, and NumPy functions are used in a functional style.
+  **Object-Oriented Programming**: Document and Corpus classes (`models.py`)
+- I used Document and Corpus classes to represent data objects.
+  **Mathematical Programming**: Vector math, mean, and Euclidean distance
+- My understanding is that vectors are calculated and compared using NumPy and Euclidean distance, all of these are key to classification.
 
 # UML Diagrams
 
