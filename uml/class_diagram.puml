@@ -1,17 +1,38 @@
-@startuml name
+@startuml name 
+
+' Document class
 class Document {
-    - category: str
     - title: str
     - abstract: str
+    - category: int
     - vector: list
-    + compute_vector(concepts: list): void
+    + compute_vector(concepts): list
 }
 
+' Corpus class
 class Corpus {
     - documents: list
-    + add_document(doc: Document): void
     + get_categories(): list
+    + group_by_category(): dict
 }
 
-Document --> Corpus
+' Functional utilities (represented as package or class)
+class Utils {
+    + euclidean_distance(v1, v2): float
+    + average_vectors(vectors): list
+}
+
+' Classifier functions (can be grouped into a module or utility)
+class Classifier {
+    + load_concepts(filepath): list
+    + load_corpus(filepath, concepts): Corpus
+    + build_category_matrix(corpus): dict
+    + classify(text, concepts, matrix): int
+}
+
+Corpus --> "many" Document
+Classifier --> Corpus
+Classifier --> Utils
+
 @enduml
+
