@@ -1,14 +1,14 @@
 from classifier import load_concepts, load_corpus, build_category_matrix, classify
 from collections import Counter
 
-# STEP 1: Load list of concept keywords
+# STEP 1: I am loading a list of concept keywords
 concepts = load_concepts("concepts.csv")
 print(f"\nOriginal concept list:\n{', '.join(concepts)}")
 
-# STEP 2: Load the labeled training dataset (corpus)
+# STEP 2: I am loading the labeled training dataset (corpus/csv)
 corpus = load_corpus("corpus.csv", concepts)
 
-# STEP 3: Display general information about the dataset
+# STEP 3: General information about the dataset is being displayed
 print(f"\nReading dataset...")
 print(f"{len(corpus.documents)} records loaded in categories:", end=" ")
 print(", ".join(sorted(set(doc.category for doc in corpus.documents))))
@@ -42,7 +42,7 @@ for doc in corpus.documents:
 for kw, count in sorted(keyword_totals.items(), key=lambda x: -x[1]):
     print(f"{kw}: {count}")
 
-# STEP 8: Load the unseen document and predict its category
+# STEP 8 (last step!!): Load the unseen document and predict its category
 with open("unseen.txt", "r", encoding="utf-8") as f:
     unseen_text = f.read()
 
